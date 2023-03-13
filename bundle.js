@@ -9250,7 +9250,7 @@ var _Resources_instances, _Resources_loaded, _Resources_sourcesCount, _Resources
 
 
 
-const modelsUrl = `Concept-site/static/models`;
+const modelsUrl = `Concept-site/tree/master/static`;
 class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
     constructor() {
         super();
