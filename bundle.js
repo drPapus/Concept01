@@ -9065,6 +9065,8 @@ class Pages {
             if (childClone instanceof three__WEBPACK_IMPORTED_MODULE_2__.Mesh && childClone.material instanceof three__WEBPACK_IMPORTED_MODULE_2__.MeshStandardMaterial) {
                 childClone.material.envMap = __classPrivateFieldGet(this, _Pages_resources, "f").envMap;
                 childClone.material.envMapIntensity = .1;
+                childClone.material.envMap.flipY = false;
+                childClone.material.envMap.encoding = three__WEBPACK_IMPORTED_MODULE_2__.sRGBEncoding;
                 childClone.material.needsUpdate = true;
             }
             __classPrivateFieldGet(this, _Pages_objectsGroup, "f").add(childClone);
@@ -9250,7 +9252,8 @@ var _Resources_instances, _Resources_loaded, _Resources_sourcesCount, _Resources
 
 
 
-const modelsUrl = `/Concept-site/static/models`;
+//import { GlassMaterial } from './Materials/GlassMaterial';
+const modelsUrl = `Concept-site/static/models`; //Concept-site/static/models  //static/models
 class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
     constructor() {
         super();
@@ -9264,6 +9267,19 @@ class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
             _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.GLTFLoader.load(`${modelsUrl}/${config.model}`, (obj) => {
                 __classPrivateFieldGet(this, _Resources_pages, "f")[page] = obj;
                 __classPrivateFieldGet(this, _Resources_instances, "m", _Resources_resourceLoaded).call(this);
+                const meshSphere = __classPrivateFieldGet(this, _Resources_pages, "f")[page].scene.getObjectByName('Sphere');
+                meshSphere.material = new three__WEBPACK_IMPORTED_MODULE_2__.MeshPhysicalMaterial({
+                    metalness: .5,
+                    roughness: 0.7,
+                    envMapIntensity: 0.9,
+                    clearcoat: 1,
+                    transparent: true,
+                    transmission: 1,
+                    opacity: .7,
+                    reflectivity: 0.1,
+                    ior: 0.96,
+                    side: three__WEBPACK_IMPORTED_MODULE_2__.BackSide,
+                });
             });
         }
         _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.RGBELoader.load(`/static/environment/scythian_tombs_2_1k.hdr`, (texture) => {
@@ -9844,14 +9860,14 @@ class Renderer extends three__WEBPACK_IMPORTED_MODULE_1__.WebGLRenderer {
         _Renderer_main.set(this, void 0);
         __classPrivateFieldSet(this, _Renderer_main, new _Main__WEBPACK_IMPORTED_MODULE_0__["default"](), "f");
         this.toneMapping = three__WEBPACK_IMPORTED_MODULE_1__.ACESFilmicToneMapping;
-        this.toneMappingExposure = 1;
+        this.toneMappingExposure = 0.7;
         this.outputEncoding = three__WEBPACK_IMPORTED_MODULE_1__.sRGBEncoding;
         this.physicallyCorrectLights = true;
         this.shadowMap.enabled = true;
         this.shadowMap.autoUpdate = false;
         this.shadowMap.type = three__WEBPACK_IMPORTED_MODULE_1__.PCFSoftShadowMap;
         this.setSize(__classPrivateFieldGet(this, _Renderer_main, "f").sizes.width, __classPrivateFieldGet(this, _Renderer_main, "f").sizes.height);
-        // this.instance.toneMappingExposure = 1.75
+        //this.instance.toneMappingExposure = 1.75
         // this.instance.setClearColor('#211d20')
         this.setPixelRatio(Math.min(__classPrivateFieldGet(this, _Renderer_main, "f").sizes.pixelRatio, 2));
         console.log('Renderer info', this.info);
