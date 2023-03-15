@@ -9267,19 +9267,19 @@ class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
             _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.GLTFLoader.load(`${modelsUrl}/${config.model}`, (obj) => {
                 __classPrivateFieldGet(this, _Resources_pages, "f")[page] = obj;
                 __classPrivateFieldGet(this, _Resources_instances, "m", _Resources_resourceLoaded).call(this);
-                const meshSphere = __classPrivateFieldGet(this, _Resources_pages, "f")[page].scene.getObjectByName('GlassSphere');
-                meshSphere.material = new three__WEBPACK_IMPORTED_MODULE_2__.MeshPhysicalMaterial({
-                    metalness: .5,
-                    roughness: 0.7,
-                    envMapIntensity: 0.9,
-                    clearcoat: 1,
-                    transparent: true,
-                    transmission: 1,
-                    opacity: .7,
-                    reflectivity: 0.1,
-                    ior: 0.96,
-                    side: three__WEBPACK_IMPORTED_MODULE_2__.BackSide,
-                });
+                // const meshSphere = this.#pages[page].scene.getObjectByName('GlassSphere') as Mesh;
+                // meshSphere.material = new MeshPhysicalMaterial({
+                //   metalness: .5,
+                //   roughness: 0.7,
+                //   envMapIntensity: 0.9,
+                //   clearcoat: 1,
+                //   transparent: true,
+                //   transmission: 1,
+                //   opacity: .7,
+                //   reflectivity: 0.1,
+                //   ior: 0.96,
+                //   side: BackSide,
+                //  });  
             });
         }
         _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.RGBELoader.load(`/static/environment/scythian_tombs_2_1k.hdr`, (texture) => {
