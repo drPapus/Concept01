@@ -9253,7 +9253,7 @@ var _Resources_instances, _Resources_loaded, _Resources_sourcesCount, _Resources
 
 
 //import { GlassMaterial } from './Materials/GlassMaterial';
-const modelsUrl = `/Concept01/static/models`; //Concept-site/static/models  //static/models
+const modelsUrl = `/Concept-site/static/models`; //Concept-site/static/models  //static/models
 class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
     constructor() {
         super();
@@ -9267,7 +9267,7 @@ class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
             _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.GLTFLoader.load(`${modelsUrl}/${config.model}`, (obj) => {
                 __classPrivateFieldGet(this, _Resources_pages, "f")[page] = obj;
                 __classPrivateFieldGet(this, _Resources_instances, "m", _Resources_resourceLoaded).call(this);
-                const meshSphere = __classPrivateFieldGet(this, _Resources_pages, "f")[page].scene.getObjectByName('Sphere');
+                const meshSphere = __classPrivateFieldGet(this, _Resources_pages, "f")[page].scene.getObjectByName('GlassSphere');
                 meshSphere.material = new three__WEBPACK_IMPORTED_MODULE_2__.MeshPhysicalMaterial({
                     metalness: .5,
                     roughness: 0.7,
