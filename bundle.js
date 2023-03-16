@@ -9065,8 +9065,8 @@ class Pages {
             if (childClone instanceof three__WEBPACK_IMPORTED_MODULE_2__.Mesh && childClone.material instanceof three__WEBPACK_IMPORTED_MODULE_2__.MeshStandardMaterial) {
                 childClone.material.envMap = __classPrivateFieldGet(this, _Pages_resources, "f").envMap;
                 childClone.material.envMapIntensity = .1;
-                childClone.material.envMap.flipY = false;
-                childClone.material.envMap.encoding = three__WEBPACK_IMPORTED_MODULE_2__.sRGBEncoding;
+                // childClone.material.envMap.flipY = false;
+                //childClone.material.envMap.encoding = sRGBEncoding;
                 childClone.material.needsUpdate = true;
             }
             __classPrivateFieldGet(this, _Pages_objectsGroup, "f").add(childClone);
