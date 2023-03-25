@@ -9282,7 +9282,7 @@ class Resources extends three__WEBPACK_IMPORTED_MODULE_2__.EventDispatcher {
                 //  });  
             });
         }
-        _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.RGBELoader.load(`/static/environment/scythian_tombs_2_1k.hdr`, (texture) => {
+        _Utils_Loaders__WEBPACK_IMPORTED_MODULE_0__.RGBELoader.load(`/Concept01/static/environment/scythian_tombs_2_1k.hdr`, (texture) => {
             __classPrivateFieldSet(this, _Resources_envMap, texture, "f");
             __classPrivateFieldGet(this, _Resources_envMap, "f").mapping = three__WEBPACK_IMPORTED_MODULE_2__.EquirectangularReflectionMapping;
             __classPrivateFieldGet(this, _Resources_envMap, "f").encoding = three__WEBPACK_IMPORTED_MODULE_2__.sRGBEncoding;
